@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block page_title %}Flask prototyping index{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+
+  <h1 class="heading-xlarge">Welcome to the flask prototyping tool</h1>
+
+  <p class="lede">This is the <em>index.html</em> page, useful for adding page links, resources and the like</p>
+
+  <h2 class="heading-large">Pages</h2>
+
+  <ul class="list-bullet">
+    <li>
+      <a href="/sample">
+        Sample
+      </a>
+    </li>
+  </ul>
+
+  <h2 class="heading-large">Resources</h2>
+
+  <ul class="list-bullet">
+    <li>
+      <a href="https://github.com/colmjude/flask_prototyping">
+        Flask prototype documentation
+      </a>
+    </li>
+    <li>
+      <a href="http://govuk-elements.herokuapp.com/snippets/">
+        Guide to GOV.UK elements HTML
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/alphagov/govuk_frontend_toolkit">
+        Frontend toolkit repo
+      </a>
+    </li>
+    <li>
+      <a href="https://www.gov.uk/service-manual">
+        Service design manual
+      </a>
+    </li>
+    <li>
+      <a href="https://www.gov.uk/design-principles">
+        Government Digital Service Design Principles
+      </a>
+    </li>
+</ul>
+
+
+</main>
+{% endblock %}

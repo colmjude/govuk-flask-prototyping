@@ -1,0 +1,55 @@
+{#
+govuk_template.html defines the following blocks:
+
+- top_of_page
+- page_title
+- head
+- body_classes
+- body_start
+- cookie_message
+- header_class
+- inside_header
+- proposition_header
+- after_header
+- content
+- footer_top
+- footer_support_links
+- body_end
+
+See https://github.com/alphagov/govuk_template for more
+information regarding the template.
+
+#}
+
+{% extends "govuk_template/views/layouts/govuk_template.html" %}
+
+{% block head %}
+
+  <!-- use compiled govuk.css from the template -->
+  <link rel="stylesheet" href="/static/govuk_template/assets/stylesheets/govuk-template.css">
+
+  {# for bundle definitions, see assets.py #}
+
+  {% assets "css_govuk" %}
+    <link rel="stylesheet" href="{{ ASSET_URL }}">
+  {% endassets %}
+
+{% endblock %}
+
+<!-- example of how you add propositional heading -->
+{% block header_class %}with-proposition{% endblock %}
+{% block proposition_header %}
+<div class='header-proposition'>
+  <div class='content'>
+    <nav id='proposition-menu'>
+      <a href='/' id='proposition-name'>Example Service</a>
+    </nav>
+  </div>
+</div>
+{% endblock %}
+
+{% block body_end %}
+
+  {# js scripts here #}
+
+{% endblock %}
