@@ -48,3 +48,7 @@ def register_extensions(app):
 
     from app.assets import assets
     assets.init_app(app)
+
+    from app.extensions import basic_auth
+    basic_auth.init_app(app)
+

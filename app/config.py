@@ -18,3 +18,7 @@ ASSETS_DEBUG = False
 ASSETS_LOAD_PATH = [
     'app/static',
     'app/templates']
+
+BASIC_AUTH_USERNAME = 'betademo'
+BASIC_AUTH_PASSWORD = 'nottobes'
+BASIC_AUTH_FORCE = True
