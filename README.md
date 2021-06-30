@@ -17,16 +17,16 @@ To install flask and all the other dependencies run:
 pip install -r requirements.txt
 ```
 
-Then fetch the latest GOVUK assets with
+Install npm requirements
 
 ```
-python manage.py install_all_govuk_assets
+npm install
 ```
 
 Finally to start the it run:
 
 ```
-python manage.py runserver
+flask run
 ```
 
 ## Security
