@@ -2,19 +2,20 @@
 """
 Flask app factory class
 """
-
 import os
 
 from flask import Flask, render_template, session
+from flask.cli import load_dotenv
 
-def create_app(config='config.py', **kwargs):
+load_dotenv()
+
+def create_app(config_filename):
     """
     App factory function
     """
-
-    app = Flask(__name__)
-    app.config.from_pyfile(config)
-    app.config.update(kwargs)
+    app = Flask(__name__)  
+    app.config.from_object(config_filename)
+    app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 10
 
     register_blueprints(app)
     register_context_processors(app)
@@ -27,7 +28,7 @@ def register_blueprints(app):
     Import and register blueprints
     """
 
-    from app.blueprints.base.views import base
+    from application.blueprints.base.views import base
     app.register_blueprint(base)
 
 def register_context_processors(app):
@@ -46,9 +47,9 @@ def register_extensions(app):
     Import and register flask extensions and initialize with app object
     """
 
-    from app.assets import assets
+    from application.assets import assets
     assets.init_app(app)
 
-    from app.extensions import basic_auth
-    basic_auth.init_app(app)
+    from application.extensions import govuk_components
+    govuk_components.init_app(app)
 

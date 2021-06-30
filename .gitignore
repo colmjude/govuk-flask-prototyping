@@ -111,3 +111,9 @@ environment.sh
 
 # screenshots
 /screenshots
+
+node_modules
+package-lock.json
+.vscode/
+
+application/static/gen/

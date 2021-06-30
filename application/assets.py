@@ -11,16 +11,16 @@ def static(*path):
 
 libsass_output = LibSass(include_paths=[
     static('scss'),
-    static('govuk_frontend_toolkit/stylesheets'),
-    static('govuk_elements/public/sass')])
+    static('node_modules/govuk-frontend/')
+])
 
 css_govuk = Bundle(
   'scss/main.scss',
   filters=(libsass_output,),
   output='gen/css/main.css',
   depends=[
-        '/static/govuk_elements/public/sass/**/*.scss',
-        '/static/govuk_frontend_toolkit/stylesheets/**/*.scss']
+        'node_modules/govuk-frontend/govuk/**/*.scss'
+    ]
 )
 
 assets = Environment()
