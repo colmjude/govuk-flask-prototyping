@@ -1,11 +1,40 @@
 {% extends "layout.html" %}
+{% from "govuk-jinja-components/components/breadcrumbs/macro.jinja" import govukBreadcrumbs %}
 
 {% block page_title %}Flask prototyping index{% endblock %}
 
 {% block content %}
 <main id="content" role="main">
 
+  {{ govukBreadcrumbs(
+    {
+      "items": [
+        {
+          "text": "Home",
+          "href": "#"
+        },
+        {
+          "text": "Passports, travel and living abroad",
+          "href": "#"
+        },
+        {
+          "text": "Travel abroad",
+          "href": "#"
+        }
+      ]
+    }
+  ) }}
+
+  {%- from "digital-land-frontend/components/info-text/macro.html" import dlInfoText -%}
+  {{ dlInfoText({
+    "html": 'There is some useful stuff on the <a href="https://digital-land.github.io">digital land website</a>.'
+  }) }}
+
   <h1 class="govuk-heading-xl">Welcome to the flask prototyping tool</h1>
+
+  {% if name %}
+  <h1 class="govuk-heading-xl">Hello {{ name }}</h1>
+  {% endif %}
 
   <p class="govuk-body">This is the <em>index.html</em> page, useful for adding page links, resources and the like</p>
 
@@ -13,8 +42,13 @@
 
   <ul class="govuk-list govuk-list--bullet">
     <li>
-      <a class="govuk-link" href="/sample">
-        Sample
+      <a class="govuk-link" href="{{ url_for('base.about', name='Paul') }}">
+        About Paul
+      </a>
+    </li>
+    <li>
+      <a class="govuk-link" href="{{ url_for('base.about', name='Colm') }}">
+        About Colm
       </a>
     </li>
   </ul>
@@ -52,3 +86,8 @@
 
 </main>
 {% endblock %}
+
+{% block bodyEnd %}
+{{ super() }}
+<script src="/static/js/test.js"></script>
+{% endblock bodyEnd %}

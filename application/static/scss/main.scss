@@ -1,3 +1,8 @@
 // import all GOVUK Frontend scss
 @import "node_modules/govuk-frontend/govuk/all";
 
+@import "colours";
+
+.govuk-body {
+  color: $test-green;
+}

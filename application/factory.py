@@ -53,3 +53,6 @@ def register_extensions(app):
     from application.extensions import govuk_components
     govuk_components.init_app(app)
 
+    from application.extensions import dl_components
+    dl_components.init_app(app)
+
