@@ -39,3 +39,7 @@ How to protect your prototype is different depending on where you decide to host
 * [Add authentication with a Route Service - PaaS](https://docs.cloud.service.gov.uk/#example-route-service-to-add-authentication)
 
 You must protect user privacy at all times, even when using prototypes. Prototypes made with the kit look like GOV.UK, but do not have the same security provisions. Always make sure you are handling user data appropriately.
+
+## To do
+
+* Make inclusion of digital land components optional.
